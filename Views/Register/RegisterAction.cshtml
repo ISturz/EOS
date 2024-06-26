@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Registration Successful";
+}
+
+@model NewUser
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+<h3>Registered User Information:</h3>
+<div>
+    <p><strong>First Name:</strong> @Model.firstname</p>
+    <p><strong>Last Name:</strong> @Model.lastName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Location:</strong> @Model.location</p>
+</div>\

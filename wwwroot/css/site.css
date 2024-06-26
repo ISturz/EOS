@@ -1,0 +1,1304 @@
+html {
+    font-size: 14px;
+
+}
+
+body {
+    margin: 0;
+    list-style-type: none;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+#indexTitle {
+    float: right;
+    font-size: 50px;
+    color: #2d2d66;
+    font-weight: 100;
+}
+
+
+/*NAV BAR*/
+.navBar {
+    position: fixed;
+    height: 100vh;
+    width: 26%;
+    float: left;
+    background-color: #161638;
+    overflow-x: hidden;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+svg {
+    color: #ffffff;
+}
+
+#navBarIcon {
+    margin-right: 10px;
+    width: 24px;
+}
+
+#NavBarHeading {
+    color: white;
+    margin: 10%;
+    font-size: 50px;
+    text-align: center;
+}
+
+.navBar a {
+    background-color: #0b0b21;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 12px 12px 12px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    display: block;
+    transition-duration: 0.2s;
+}
+
+.navBarButtons {
+    background-color: #030017;
+}
+
+.navBar a:hover {
+    transition-duration: 0.2s;
+    background-color: #6156db;
+}
+
+.menuIcon {
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 20px;
+    bottom: 0px;
+    position: fixed;
+    width: 26%;
+    background-color: #0b0b21;
+    z-index: 5;
+}
+
+.footer#alternate {
+    background-color: red;
+}
+
+.topBTN {
+    background-color: #0b0b21;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+
+.footerDetail {
+    color: #919191;
+}
+
+/*LOGIN BAR*/
+.logInSideBar {
+    margin-top: 10%;
+    margin-bottom: 30%;
+    float: right;
+    position: fixed;
+    border-radius: 10px;
+    right: 25px;
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    background-color: #161638;
+    color: white;
+    font-size: 25px;
+    clear: both;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+input[type=text], input[type=password] {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: black;
+    background-color: white;
+    color: #000;
+}
+
+#MessageInputField {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: black;
+    background-color: white;
+    color: #000;
+}
+
+.dropdown {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: black;
+    background-color: white;
+    color: #000;
+}
+
+#loginH2 {
+    color: white;
+    padding: 50px;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: dashed;
+}
+
+#loginBtn {
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #0b0b21;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-right: 2px;
+    transition-duration: 0.2s;
+
+}
+
+#registerBtn {
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #0b0b21;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-right: 2px;
+    transition-duration: 0.2s;
+}
+
+    #loginBtn:hover, #registerBtn:hover {
+        background-color: #030017;
+        transition-duration: 0.2s;
+    }
+
+#checkboxLabel {
+    font-size: 16px;
+    width: 100%;
+    display: inline;
+}
+
+#checkbox {
+    margin: 5%;
+}
+
+#accountH5 {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/*INDEX PAGE*/
+.headerContainer {
+    position: absolute;
+    left: 0;
+    right: 20px;
+    margin-top: 30px;
+    margin-left: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.indexLabel {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.indexContainer {
+    width: 100%;
+    padding-top: 15%;
+}
+
+.indexImage {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+}
+
+.row {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-left: 20%;
+    width: 100%;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 31px 3px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 31px 3px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 31px 3px rgba(0,0,0,0.24);
+}
+
+.column {
+    position: relative;
+    padding: 60px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+.rowAlt:after {
+    display: table;
+    clear: both;
+}
+
+.indexHeader {
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.indexHeaderAlt {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.aboutUsText {
+    color: #000;
+    font-size: 22px;
+    font-weight: 100;
+    margin-bottom: 0px;
+    text-align: justify;
+}
+
+.aboutUsTextAlt {
+    color: #d4d4d4;
+    font-size: 22px;
+    font-weight: 100;
+    text-align: justify;
+}
+
+#inboxHead {
+    display: none;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: 500;
+}
+
+#learnMoreBtn {
+    background-color: #6156db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    margin-top: 60px;
+    width: 100%;
+}
+
+    #learnMoreBtn:hover {
+        background-color: #423a99;
+        color: white;
+        transition: ease-out;
+        transition-duration: 0.2s;
+    }
+
+.red {
+    margin-top: 20px;
+    background-color: #ad1515;
+    border-radius: 5px;
+    padding: 14px;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/*REGISSTRATION PAGE*/
+.registrationContainer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+#regoBtn, #resetBtn {
+    margin-top: 20px;
+    background-color: #161638;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+
+    #regoBtn:hover, #resetBtn:hover {
+        background-color: #6156db;
+    }
+
+/*CONTACT PAGE*/
+#contactH2 {
+    color: white;
+    font-size: 24px;
+    text-align: left;
+    text-decoration: dashed;
+}
+
+#contactP {
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: dashed;
+}
+
+#contactForm {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.contactContainerLO {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+.contactContainerLI {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+.contactBarLO {
+    margin-top: 10%;
+    margin-bottom: 30%;
+    float: right;
+    position: fixed;
+    border-radius: 10px;
+    right: 20px;
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    background-color: #161638;
+    color: white;
+    font-size: 25px;
+    clear: both;
+    -webkit-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+}
+
+.contactBarLI {
+    margin-top: 20px;
+    background-color: #0b0b21;
+    padding: 20px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+}
+
+
+.input-error {
+    font-size: 15px;
+    color: indianred;
+}
+
+/*ABOUT PAGE*/
+.aboutContainer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 71.5%;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+.teamContainer {
+    text-align: center;
+    border-radius: 10px;
+}
+
+.imageContainer {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 21.5%;
+    vertical-align: top;
+}
+
+#teamMemberPicture {
+    padding: 10px;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+}
+
+.teamNames {
+    color: #000;
+    padding: 10px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.teamRoles {
+    color: #fff;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #161638;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.memberText {
+    padding: 10px;
+    font-size: 16px;
+    text-align: justify;
+
+}
+
+/*Labels*/
+.loginLabel {
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.regLabel {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contactLabel {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/*INBOX PAGE*/
+
+.inboxContainer, .accountContainer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px -1px rgba(0,0,0,0.24);
+}
+
+.emailControls {
+    margin-top: 10%;
+    margin-bottom: 20%;
+    float: right;
+    position: fixed;
+    border-radius: 10px;
+    right: 25px;
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    background-color: #161638;
+    color: white;
+    font-size: 25px;
+    clear: both;
+    -webkit-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.12);
+}
+
+#myEmailBtn {
+    background-color: #6156db;
+}
+
+#delEmailBtn {
+    background-color: #6156db;
+}
+
+#emailControlsH2 {
+    color: white;
+    padding: 50px;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: dashed;
+}
+
+.emailControls button {
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #0b0b21;
+    color: white;
+    font-size: 14px;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-right: 2px;
+    font-weight: 600;
+}
+
+    .emailControls button:hover {
+        transition-duration: 0.5s;
+        background-color: #030017;
+    }
+
+.inboxBody, .generateBody {
+    width: 100%;
+    height: 520px;
+    background-color: #f8f8f8;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+
+.email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition-duration: 0.5s;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 2px solid #f2f2f2;
+    border-radius: 5px;
+    display: block;
+    list-style-type: none;
+    margin: 5px;
+
+}
+
+.emailList {
+    margin: 0;
+    padding: 0px;
+}
+
+.emailBTN {
+    transition-duration: 0.2s;
+    border-radius: 5px;
+    width: 0%;
+    margin-right: -60px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    border: none;
+    padding: 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    float: right;
+    background-color: #ad1515;
+    color: #fff;
+}
+
+.email:hover .emailBTN {
+    display: block;
+    margin-right: -20px;
+    transition-duration: 0.2s;
+    width: 15%;
+}
+
+.emailHeader {
+    display: inline;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 600;
+    background-color: #161638;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.emailSubject {
+    display: inline;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+    color: #000;
+    border-radius: 5px;
+}
+
+.emailDate {
+    font-weight: 700;
+    margin: 0px;
+    float: right;
+    font-size: 12px;
+    color: #666;
+}
+
+.emailSubject {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+    display: inline;
+    font-size: 12px;
+    color: #525252;
+}
+
+.removeEmailBtn {
+    background-color: #c92222;
+    float: right;
+    color: white;
+    border: none;
+    padding: 12.5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.editEmailBtn {
+    background-color: #6156db;
+    float: right;
+    color: white;
+    border: none;
+    padding: 12.5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.reactivateEmailBtn {
+    background-color: #25db56;
+    float: right;
+    color: white;
+    border: none;
+    padding: 12.5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+    #newEmailBtn, #clearEmailBtn {
+    margin-top: 20px;
+    margin-right: -1px;
+    width: 49.6%;
+    display: inline;
+    border-radius: 5px;
+    background-color: #161638;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+        #newEmailBtn:hover, #clearEmailBtn:hover {
+            background-color: #6156db;
+            transition: background-color 0.2s;
+        }
+
+.generateBody {
+    overflow-y: hidden;
+}
+
+.genEmailHeader {
+    font-size: 16px;
+    background-color: #161638;
+    color: #e8e8e8;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.buttonsContainer {
+    float: right;
+}
+
+.genEmailName {
+    padding-left: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline;
+}
+
+.genEmailAddress {
+    transition-duration: 0.2s;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: inline;
+    cursor: pointer;
+}
+
+    .genEmailAddress:hover {
+        transition-duration: 0.2s;
+        background-color: #6156db;
+        color: #fff;
+    }
+
+.copyIcon {
+    padding-left: 10px;
+}
+
+/*SEARCH BAR*/
+
+.search-container {
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+    .search-container button {
+        border-radius: 5px;
+        float: right;
+        margin-left: 5px;
+        padding: 10px;
+        width: 25%;
+        background: #161638;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s;
+    }
+
+    .search-container button:hover {
+        background-color: #6156db;
+        transition: background-color 0.2s;
+    }
+
+.filter-container {
+    margin: 20px;
+}
+
+#filter {
+    border-radius: 5px;
+    border: 2px solid #f2f2f2;
+}
+
+
+
+/*ACCOUNTS PAGE*/
+.accountHeadings {
+
+    text-align: left;
+    width: 30%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #000;
+}
+
+.accountData {
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+    width: 70%;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #000;
+
+}
+
+.accountBtn {
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: left;
+    font-weight: 600;
+    text-align: center;
+    padding: 18px;
+    color: #fff;
+    background-color: #c92222;
+    transition-duration: 0.2s;
+}
+
+    .accountBtn:hover {
+        transition-duration: 0.2s;
+        background-color: #9c0e0e;
+    }
+
+.accountEditHeadings {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.accountEditBtn {
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    padding: 14px;
+    background-color: #0b0b21;
+    color: white;
+    border: none;
+}
+
+#accountDeleteWarnning {
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #c92222;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+/*MEDIA QUERY Containers*/
+
+@media screen and (max-width: 1200px) {
+
+    .indexContainer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+    }
+
+    div.container {
+        padding: 10px;
+    }
+
+    .registrationContainer, .contactContainerLO, .aboutContainer, .inboxContainer {
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        position: static;
+    }
+
+    .inboxContainer, .accountContainer, .contactContainerLI {
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 100px;
+        padding-left: 70px;
+        padding-right: 10px;
+        width: 100%;
+        position: static;
+        padding-bottom: 100px;
+    }
+
+    .headerContainer {
+        display: none;
+    }
+}
+
+
+/*MEDIA QUERY NAVBAR & Footer*/
+
+@media screen and (max-width: 1200px) {
+
+    .navBar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        float: none;
+        z-index: 10;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #NavBarHeading {
+        display: none;
+    }
+
+    .navBar .navBarLinks {
+        font-size: 14px;
+        width: 25%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        float: left;
+        background-color: #161638;
+    }
+
+    .navBar .navBarLinkSession {
+        font-size: 13px;
+        width: 25%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        float: left;
+        background-color: #161638;
+    }
+
+    #navBarIcon {
+        display: none;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+
+    .footer {
+        width: 100%;
+    }
+    .footerDetail {
+        float: left;
+        margin-left: 20px;
+    }
+    .topBTN {
+        background-color: #6156db;
+        float: right;
+        margin-right: 20px;
+    }
+}
+
+
+/*MEDIA QUERY Side BARS*/
+@media screen and (max-width: 1200px) {
+
+    .contactBarLO {
+        width: 100%;
+        position: static;
+    }
+
+    .logInSideBar {
+        width: 100%;
+        position: static;
+    }
+
+    .contactBarLI {
+        display: none;
+        position: static;
+    }
+    #loginH2 {
+        padding: 10px;
+    }
+
+    .emailControls {
+        padding-top: 100px;
+        z-index: 1;
+        margin: 0;
+        width: 60px;
+        font-size: 14px;
+        position: fixed;
+        left: 0px;
+        transition-duration: 0.3s;
+        background-color: #030303;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .menuIcon {
+        display: block;
+        margin-top: -10px;
+        transition-duration: 0.3s;
+        float: right;
+    }
+
+    .emailButtonContainer {
+        display: none;
+    }
+
+    .emailControls:hover {
+        transition-duration: 0.5s;
+        width: 70%;
+        background: linear-gradient(90deg, rgba(11,11,33,1) 0%, rgba(22,22,56,1) 100%);
+    }
+
+        .emailControls:hover .emailButtonContainer {
+            display: block;
+        }
+
+        .emailControls:hover .contactBarLI {
+            display: block;
+            transition-duration: 0.5s
+        }
+
+    #emailControlsH2 {
+        display: none;
+    }
+}
+
+
+/*MEDIA QUERY INDEX*/
+
+@media screen and (max-width: 1700px) {
+
+    .row {
+        width: 80%;
+        margin-left: 25%;
+    }
+
+    .column {
+        padding: 30px;
+    }
+
+    .indexHeader {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .indexHeaderAlt {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .aboutUsText {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .aboutUsTextAlt {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .row {
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 20px;
+    }
+
+    .column {
+        padding: 20px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    .indexImage {
+        padding: 0px;
+        text-align: center;
+    }
+
+    #learnMoreBtn {
+        margin-top: 20px;
+    }
+}
+
+
+/*MEDIA QUERY Emails*/
+
+@media screen and (max-width: 1200px) {
+
+    #inboxHead {
+        color: #000;
+        font-size: 20px;
+        display: block;
+        margin-top: 20px;
+        font-weight: 400;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .emailDate {
+        margin-bottom: 20px;
+        margin-left: 5px;
+        float: none;
+    }
+
+    .emailSubject {
+        margin-top: 20px;
+        margin-left: 5px;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .email:hover .emailBTN {
+        width: 30%;
+        padding: 5px;
+    }
+}
+
+
+
+/*MEDIA QUERY ABOUT PAGE*/
+
+@media screen and (max-width: 1200px) {
+
+    #teamMemberPicture {
+        width: 50%;
+    }
+    .imageContainer {
+        width: 100%;
+    }
+}
+
+
+/*MEDIA QUERY ACCOUNT PAGE*/
+
+@media screen and (max-width: 800px) {
+
+    .accountHeadings {
+        display: block;
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .accountData {
+        background-color: #fff;
+        display: block;
+        width: 100%;
+    }
+
+    .accountBtn {
+        margin-top: 0px;
+        width: 100%;
+        border: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+    }
+
+    .registrationContainer, .aboutContainer, .contactContainerLO, .contactContainerLI, .inboxContainer, .accountContainer, .inboxBody, .row {
+        background-color: #0a0a0a;
+    }
+
+    .indexHeader, .indexHeaderAlt, .aboutUsText, .aboutUsTextAlt, .memberText, .teamNames, .genEmailName, .genEmailAddress, .filter-container, .accountHeadings, .accountEditHeadings, .regLabel, .emailSubject, #inboxHead {
+        color: #b5b5b5;
+    }
+
+    .email {
+        background-color: #121212;
+        border: 2px solid #2e2e2e;
+    }
+
+    .accountData {
+        background-color: #121212;
+        color: #fff;
+        border: 2px solid #2e2e2e;
+    }
+
+    #filter {
+        background-color: #121212;
+        color: #fff;
+        border: 2px solid #2e2e2e;
+    }
+
+    input[type=text], input[type=password], .dropdown, #MessageInputField {
+        background-color: #121212;
+        color: #fff;
+        border: 2px solid #2e2e2e;
+    }
+}

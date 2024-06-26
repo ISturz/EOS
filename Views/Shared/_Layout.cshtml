@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EOS</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <h2 id="NavBarHeading">E.O.S</h2>
+
+            @using Microsoft.AspNetCore.Http
+            @using Microsoft.AspNetCore.Mvc.Routing
+
+            @if (Context.Session.GetString("UserEmail") != null)
+            {
+                <a href="@Url.Action("MyEmails", "MyEmails")" new id="inboxNav" , class="navBarLinkSession">
+                    <img class="button" src="~/img/inbox.svg" id="navBarIcon" /> Emails
+                </a>
+
+                <a href="@Url.Action("Account", "Account")" id="accountNav" class="navBarLinkSession">
+                    <img class="button" src="~/img/settings.svg" id="navBarIcon" /> Account
+                </a>
+
+                <a href="@Url.Action("Contact", "Contact", "Contact")" new id="contactNav" , class="navBarLinkSession">
+                    <img class="button" src="~/img/phone.svg" id="navBarIcon" /> Contact
+                </a>
+
+                <a href="@Url.Action("Logout", "Register")" id="logoutNav" class="navBarLinkSession">
+                    <img class="button" src="~/img/logout.svg" id="navBarIcon" /> Logout
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", "Home")" new id="homeNav" , class="navBarLinks">
+                    <img class="button" src="~/img/home.svg" id="navBarIcon" /> Home
+                </a>
+
+                <a href="@Url.Action("Register", "Register", "Register")" new id="regNav" , class="navBarLinks">
+                    <img class="button" src="~/img/user-plus.svg" id="navBarIcon" /> Register
+                </a>
+
+                <a href="@Url.Action("About", "About", "About")" new id="aboutNav" , class="navBarLinks">
+                    <img class="button" src="~/img/help-circle.svg" id="navBarIcon" /> About
+                </a>
+
+                <a href="@Url.Action("Contact", "Contact", "Contact")" new id="contactNav" , class="navBarLinks">
+                    <img class="button" src="~/img/phone.svg" id="navBarIcon" /> Contact
+                </a>
+            }
+
+        </div>
+            <div class="footer">
+
+                <p class="footerDetail">
+                    E.O.S™ Est. 2023
+                </p>
+                <button onclick="topFunction()" class="topBTN" id="topBTN"><img src="~/img/top.svg" id="navBarIcon" />Return To Top</button>
+            </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>

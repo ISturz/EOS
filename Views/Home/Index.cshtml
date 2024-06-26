@@ -1,0 +1,109 @@
+﻿@model LoggedIn
+
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="headerContainer">
+    <h2 id="indexTitle">EMAIL OBFUSCATION SYSTEM</h2>
+</div>
+
+<div class="indexContainer">
+    <div class="row" style="background: linear-gradient(90deg, rgba(11,11,33,1) 0%, rgba(22,22,56,1) 100%);">
+        <div class="column">
+            <h2 class="indexHeaderAlt">Inbox Filled with Spam?</h2>
+            <P class="aboutUsTextAlt">
+                Eos offers a powerful solution for those looking to take control of their online presence and protect their personal information. 
+                With Eos, you can target and delete links to websites that may have compromised your data or privacy. Additionally, 
+                Eos provides the ability to generate unique email addresses for signing up on new websites and services, 
+                reducing the risk of spam and unauthorized access to your primary email.
+                <form asp-controller="About" asp-action="About" method="post">
+                    <button id="learnMoreBtn" type="submit">Learn More</button>
+                </form>
+            </P>
+        </div>
+        <div class="column">
+            <h2 class="indexHeaderAlt">Login</h2>
+            <P class="aboutUsText">
+                <form id="loginForm" asp-controller="Login" asp-action="LoginAction" method="post">
+
+                    @* Email Entry *@
+                    <div class="form-group">
+                        <label asp-for="Email" class="indexLabel">Email:</label>
+                        <div>
+                            <input asp-for="Email" class="text" type="text" placeholder="Enter Email" autocomplete="on" required />
+                            <span asp-validation-for="Email" class="input-error"></span>
+                        </div>
+                    </div>
+
+                    @* Password Entry *@
+                    <div class="form-group">
+                        <label asp-for="Password" class="indexLabel">Password:</label>
+                        <div>
+                            <input asp-for="Password" class="text" type="password" placeholder="Password" autocomplete="on" required/>
+                            <span asp-validation-for="Password" class="input-error"></span>
+                        </div>
+                    </div>
+
+
+                    <button id="loginBtn" type="submit">Login</button>
+
+                    @if (TempData["msg"] != null)
+                    {
+                        <h4 class="red">
+                            @Html.Raw(TempData["msg"])
+                        </h4>
+                    }
+
+                    <!--<label id="checkboxLabel">
+                        <input id="checkbox" type="checkbox" asp-for="RememberMe">Remember Me
+                    </label>-->
+
+                </form>
+
+                <p class="indexLabel">Dont have an account?</p>
+                <form asp-action="Register" asp-controller="Register">
+                    <!-- Replace with your actual registration page URL -->
+                    <button id="registerBtn" type="submit">Register Here</button>
+                </form>
+            </P>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <P class="aboutUsText">
+                <img src="~/img/indeximage1.jpeg"  class="indexImage"/>
+            </P>
+        </div>
+        <div class="column">
+            <h2 class="indexHeader">Welcome to E.O.S</h2>
+            <P class="aboutUsText">
+                EOS provides a unique and innovative solution to online security that enhances your email security and privacy.
+                With EOS, users can create multiple secure hashed email addresses that are linked to their accounts, 
+                which act as an intermediary shield between senders and their original email address. 
+                This system not only offers an added layer of protection against spam but also safeguards against the all-too-common database leaks that can compromise personal information.
+            </P>
+        </div>
+    </div>
+
+    <div class="row" style="background: linear-gradient(90deg, rgba(11,11,33,1) 0%, rgba(22,22,56,1) 100%);">
+        <div class="column">
+            <h2 class="indexHeaderAlt">Safeguard your personal information today.</h2>
+            <P class="aboutUsTextAlt">
+                Database leaks are a growing concern in our increasingly digital world, these breaches occur when sensitive information stored in databases, 
+                such as personal data, financial records, or proprietary business information, is inadvertently or maliciously exposed to unauthorized parties. 
+                The consequences of a database leak can be far-reaching, from identity theft, financial fraud, and reputational damage.
+            </P>
+        </div>
+        <div class="column">
+            <P class="aboutUsTextAlt">
+                <img src="~/img/indeximage2.jpeg" class="indexImage"/>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

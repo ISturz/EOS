@@ -1,0 +1,15 @@
+﻿@model NewUser
+
+@{
+    ViewData["Title"] = "Email Generation Successful";
+}
+
+    <div class="generateContainer">
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-success">
+            @ViewBag.Message
+        </div>
+    }
+        <h2>@ViewData["Title"]</h2>
+    </div>

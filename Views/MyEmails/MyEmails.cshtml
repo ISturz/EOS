@@ -1,0 +1,107 @@
+﻿@model LoggedIn
+
+@{
+    ViewBag.Title = "My Email";
+}
+
+<div class="headerContainer">
+    <h2 id="indexTitle">My Emails</h2>
+</div>
+
+<div class="emailControls">
+    <img src="~/img/menu.svg" class="menuIcon" />
+    <div class="emailButtonContainer">
+
+        <h2 id="emailControlsH2">Email Controls</h2>
+
+        <form asp-controller="Inbox" asp-action="Inbox" method="post">
+            <button id="myEmailBtn" type="submit">Inbox</button>
+        </form>
+
+        <form asp-controller="DeletedEmail" asp-action="DeletedEmails" method="post">
+            <button id="delEmailBtn" type="submit">Inactive Emails</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="inboxContainer">
+    <h2 id="inboxHead">Generator</h2>
+    <form method="post" id="generateForm" asp-action="GenerateAction">
+
+        @*Application Name Entry*@
+        <div class="form-group">
+            <label asp-for="Account" class="regLabel">Website Name</label>
+            <div>
+                <input asp-for="Account" maxlength="32" class="text" placeholder="Enter Website" required />
+            </div>
+        </div>
+
+        <input type="submit" value="Generate" id="newEmailBtn" />  
+        <button id="newEmailBtn" type="submit" value="reset">Clear</button>
+    </form>
+    <div class="inboxHead">
+        <h2 id="inboxHead">Your Email Addresses</h2>
+        <form id="searchForm" asp-controller="MyEmails" asp-action="MyEmails">
+            <div class="search-container">
+                <input id="searchBar" type="text" placeholder="Search..." name="searchString" required>
+                <button id="searchBtn" type="submit">Search</button>
+            </div>
+        </form>
+        <div class="filter-container">
+            <label for="filter">Filter By:</label>
+            <select id="filter">
+                <option value="relevant">Most Recent</option>
+                <option value="alphabetical">A-Z</option>
+                <option value="alphabetical">Z-A</option>
+            </select>
+        </div>
+    </div>
+
+    @if (TempData["msg"] != null)
+    {
+        <h4 class="red">
+            @Html.Raw(TempData["msg"])
+        </h4>
+    }
+
+    <div class="inboxBody">
+        @if (Model.GeneratedEmails != null)
+        {
+            @foreach (var email in Model.GeneratedEmails)
+            {
+                <div class="email">
+                    <form class="deleteGenForm" asp-controller="MyEmails" asp-action="RemoveGenEmail" method="post">
+                        <input type="hidden" name="website" value="@email.Key" />
+                        <input type="hidden" name="genEmailAddress" value="@email.Value" />
+                        <button class="removeEmailBtn" id="removeEmailBtn" type="button" onclick="removeEmail(this)"><img src="~/img/delete.svg" /></button>
+                    </form>
+                    <form asp-controller="MyEmails" asp-action="EditEmailView" method="post">
+                        <input type="hidden" name="website" value="@email.Key" />
+                        <input type="hidden" name="genEmailAddress" value="@email.Value" />
+                        <button class="editEmailBtn" id="editEmailBtn" type="submit"><img src="~/img/edit.svg" /></button>
+                    </form>
+                        <h2 class="genEmailHeader">@email.Key</h2>
+                    <p class="genEmailName">Email Address: </p>
+                    <p class="genEmailAddress" onclick="copyEmailToClipboard(this)">@email.Value<img src="~/img/copyicon.svg" class="copyIcon"/></p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No generated emails found.</p>
+        }
+
+        <script>
+            function removeEmail(button) {
+                // Get the form associated with the clicked "Remove" button
+                var form = button.closest(".deleteGenForm");
+
+                // Confirm deletion
+                if (confirm("Are you sure you want to remove this email?")) {
+                    form.submit();
+                }
+            }
+        </script>
+    </div>
+</div>

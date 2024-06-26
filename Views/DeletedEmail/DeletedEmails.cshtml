@@ -1,0 +1,70 @@
+﻿@model LoggedIn
+
+@{
+    ViewData["Title"] = "Deleted Emails Page";
+}
+
+<div class="headerContainer">
+    <h2 id="indexTitle">Deleted Emails</h2>
+</div>
+
+<div class="emailControls">
+    <img src="~/img/menu.svg" class="menuIcon" />
+    <div class="emailButtonContainer">
+
+        <h2 id="emailControlsH2">Email Controls</h2>
+
+        <form asp-controller="Inbox" asp-action="Inbox" method="post">
+            <button id="myEmailBtn" type="submit">Inbox</button>
+        </form>
+
+        <form asp-controller="DeletedEmail" asp-action="DeletedEmails" method="post">
+            <button id="delEmailBtn" type="submit">Inactive Emails</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="inboxContainer">
+
+    <div class="inboxHead">
+        <h2 id="inboxHead">Deleted Emails</h2>
+        <form id="searchForm" asp-controller="DeletedEmail" asp-action="DeletedEmails">
+            <div class="search-container">
+                <input id="searchBar" type="text" placeholder="Search..." name="searchString">
+                <button id="searchBtn" type="submit">Search</button>
+            </div>
+        </form>
+        <div class="filter-container">
+            <label for="filter">Filter By:</label>
+            <select id="filter">
+                <option value="relevant">Most Recent</option>
+                <option value="alphabetical">A-Z</option>
+                <option value="alphabetical">Z-A</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="inboxBody">
+        @if (Model.DeletedEmails != null)
+        {
+            @foreach (var email in Model.DeletedEmails)
+            {
+                <div class="email">
+                    <form asp-controller="DeletedEmail" asp-action="ReActivateEmail" method="post">
+                        <input type="hidden" name="website" value="@email.Key" />
+                        <input type="hidden" name="genEmailAddress" value="@email.Value" />
+                        <button class="reactivateEmailBtn" id="reactiveEmailBtn" type="submit"><img src="~/img/restore.svg" /></button>
+                    </form>
+                    <h2 class="genEmailHeader">Website: @email.Key</h2>
+                    <p class="genEmailName">Email Address: </p>
+                    <p class="genEmailAddress" onclick="copyEmailToClipboard(this)">@email.Value<img src="~/img/copyicon.svg" class="copyIcon" /></p>
+                </div>
+
+            }
+        }
+        else
+        {
+            <p>No generated emails found.</p>
+        }
+    </div>

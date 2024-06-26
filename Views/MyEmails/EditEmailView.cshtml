@@ -1,0 +1,46 @@
+﻿@model EditEmailModel
+
+@{
+    ViewBag.Title = "Edit Email Page";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<div class="headerContainer">
+    <h2 id="indexTitle">Edit Emails</h2>
+</div>
+
+<div class="emailControls">
+    <img src="~/img/menu.svg" class="menuIcon" />
+    <div class="emailButtonContainer">
+
+        <h2 id="emailControlsH2">Email Controls</h2>
+
+        <form asp-controller="Inbox" asp-action="Inbox" method="post">
+            <button id="myEmailBtn" type="submit">Inbox</button>
+        </form>
+
+        <form asp-controller="DeletedEmail" asp-action="DeletedEmails" method="post">
+            <button id="delEmailBtn" type="submit">Inactive Emails</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="inboxContainer">
+    <h2 id="inboxHead">Edit Email</h2>
+    <form method="post" id="editForm" asp-asp-controller="MyEmails" asp-action="EditEmailAction">
+
+        @*Application Name Entry*@
+        <div class="form-group">
+            <label class="regLabel">Website Name</label>
+            <div>
+                <input type="hidden" name="genEmailAddress" value="@Model.GenEmail" />
+                <input type="text" íd="editEmailWeb" name="newWebName" placeholder="@Model.Website" required/>
+            </div>
+        </div>
+
+        <input type="submit" value="Confirm Edit" id="newEmailBtn" />
+        <button id="newEmailBtn" type="submit" value="reset">Clear</button>
+    </form>
+</div>

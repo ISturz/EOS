@@ -1,0 +1,119 @@
+﻿@model InboxViewModel
+
+@{
+    ViewData["Title"] = "Inbox";
+}
+
+<div class="headerContainer">
+    <h2 id="indexTitle">Inbox</h2>
+</div>
+
+<div class="emailControls">
+    <img src="~/img/menu.svg" class="menuIcon" />
+    <div class="emailButtonContainer">
+
+    <h2 id="emailControlsH2">Email Controls</h2>
+
+    <form asp-controller="Inbox" asp-action="Inbox" method="post">
+        <button id="myEmailBtn" type="submit">Inbox</button>
+    </form>
+
+    <form asp-controller="DeletedEmail" asp-action="DeletedEmails" method="post">
+            <button id="delEmailBtn" type="submit">Inactive Emails</button>
+    </form>
+    </div>
+</div>
+
+
+<div class="inboxContainer">
+
+    <div class="inboxHead">
+        <h2 id="inboxHead">Inbox</h2>
+        <form id="searchForm" asp-controller="Inbox" asp-action="Inbox">
+            <div class="search-container">
+                <input id="searchBar" type="text" placeholder="Search..." name="searchString">
+                <button id="searchBtn" type="submit">Search</button>
+            </div>
+        </form>
+        <div class="filter-container">
+            <label for="filter">Filter By:</label>
+            <select id="filter">
+                <option value="relevant">Most Recent</option>
+                <option value="alphabetical">A-Z</option>
+                <option value="alphabetical">Z-A</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="inboxBody">
+        
+        @if (Model.InboxEmailList != null)
+        {
+
+            <ul class="emailList">
+                <!--For each email in the inbox List-->
+                @foreach (var email in Model.InboxEmailList)
+                {
+                    <!--For each metaData Item in each email-->
+                    @foreach (var metadataItem in email.Metadata)
+                    {
+                        bool matchFound = false; // Flag to track if a match is found
+
+                        <!--for each generated email in the generated email list-->
+                        foreach (var generatedEmail in Model.GeneratedEmailList)
+                        {
+                            if (generatedEmail.Value.Equals(email.email))
+                            {
+                                // Display the header if InboxEmailList.Email matches GeneratedEmails.Key
+
+                                    <div class="email">
+                                        <form class="deleteGenForm" asp-controller="Inbox" asp-action="RemoveInboxEmail" method="post">
+                                            <input type="hidden" name="date" value="@metadataItem.Key" />
+                                            <input type="hidden" name="subject" value="@metadataItem.Value" />
+                                            <input type="hidden" name="genEmail" value="@generatedEmail.Value" />
+                                                
+                                            <button class="emailBTN" id="deleteEmailBtn" type="button" onclick="removeEmail(this)">Delete</button>
+                                        </form>
+                                        <p class="emailDate">@metadataItem.Key</p>
+                                        <h2 class="emailHeader">@generatedEmail.Key</h2><h3 class="emailSubject">@metadataItem.Value</h3>
+                                    </div>
+                                matchFound = true; // Set the flag to true
+                                break; // Break out of the loop since a match is found
+                            }
+                        }
+
+                        if (!matchFound)
+                        {
+                            // Display a default message if there's no match, this should never happen 
+                            <li class="email">
+                                <div class="email">
+                                    <button class="emailBTN">Delete</button>
+                                    <p class="emailDate">@metadataItem.Key</p>
+                                    <h2 class="emailHeader"><span>No matching header</span></h2>
+                                </div>
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+        }
+        else
+        {
+            
+            <p>No emails found.</p>
+        }
+
+        <script>
+            function removeEmail(button) {
+                // Get the form associated with the clicked "Remove" button
+                var form = button.closest(".deleteGenForm");
+
+                // Confirm deletion
+                if (confirm("Are you sure you want to remove this email?")) {
+                    form.submit();
+                }
+            }
+        </script>
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+﻿@model LoggedIn
+
+@{
+    ViewData["Title"] = "Your Account";
+}
+
+<div class="headerContainer">
+    <h2 id="indexTitle">Account</h2>
+</div>
+
+<div class="emailControls">
+    <img src="~/img/menu.svg" class="menuIcon" />
+    <div class="emailButtonContainer">
+
+        <h2 id="emailControlsH2">Email Controls</h2>
+
+        <form asp-controller="Inbox" asp-action="Inbox" method="post">
+            <button id="myEmailBtn" type="submit">Inbox</button>
+        </form>
+
+        <form asp-controller="DeletedEmail" asp-action="DeletedEmails" method="post">
+            <button id="delEmailBtn" type="submit">Inactive Emails</button>
+        </form>
+    </div>
+</div>
+
+<div class="accountContainer">
+    <h2 id="inboxHead">Account</h2>
+        @if (TempData["msg"] != null)
+        {
+            <h4 class="red">
+                @Html.Raw(TempData["msg"])
+            </h4>
+            <br />
+        }
+
+        <h2 class="accountHeadings">First Name: </h2><h2 class="accountData">@Model.firstname</h2>
+        <h2 class="accountHeadings">Last Name:  </h2><h2 class="accountData">@Model.lastName</h2>
+        <h2 class="accountHeadings">Email Address:  </h2><h2 class="accountData">@Model.Email</h2>
+        <h2 class="accountHeadings">Location:  </h2><h2 class="accountData">@Model.location</h2>
+    
+            <form asp-controller="Account" asp-action="AccountEdit">
+                <h2 class="accountHeadings">Edit Account:</h2><button class="accountBtn" id="editAccountBtn" type="submit">Edit</button>
+            </form>
+
+            <form id="deleteForm" asp-controller="Account" asp-action="AccountDelete">
+                <h2 class="accountHeadings">Delete Account:</h2><button class="accountBtn" id="deleteAccountBtn" type="button" onclick="showConfirmation()">Delete</button>
+            </form>
+
+        <script>
+            function showConfirmation() {
+                if (confirm("Are you sure you want to delete your account?")) {
+                    document.getElementById("deleteForm").submit();
+                }
+            }
+        </script>
+
+        <h3 id="accountDeleteWarnning"> DISCLAIMER: Delete is irreversible</h3>
+ </div>
